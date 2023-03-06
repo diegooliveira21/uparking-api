@@ -1,0 +1,4 @@
+export default () => ({
+  port: 3000,
+  PASSWORD_SECRET:'089663533f18064aafa7125c68149c1ad68975b438bd247aff95b5780bdcdad723a36a65a5126915705aadb78bc948b2'
+});

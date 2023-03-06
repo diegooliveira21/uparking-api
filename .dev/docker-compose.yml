@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: uparking
+      MYSQL_ROOT_PASSWORD: V!p3vBtdoX2^Kv
+    ports:
+      - "3309:3306"
