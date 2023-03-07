@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Post, Put, Query, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from "@nestjs/common";
 import ParkingService from './parking.service';
 import {
   PREFIX,
@@ -32,14 +32,14 @@ export class ParkingController {
   }
 
   @UseGuards(JwtGuard)
-  @Delete('/{cnpj}')
-  deleteParking(@Query() payload: DeleteParkingPayload): DeleteParkingResponse {
+  @Delete(':cnpj')
+  deleteParking(@Param() payload: DeleteParkingPayload): DeleteParkingResponse {
     return this.parkingService.remove(payload)
   }
 
   @UseGuards(JwtGuard)
-  @Get('/{cnpj}')
-  getParking(@Query() payload: GetParkingPayload): GetParkingResponse {
+  @Get(':cnpj')
+  getParking(@Param() payload: GetParkingPayload): GetParkingResponse {
     return this.parkingService.detail(payload)
   }
 }

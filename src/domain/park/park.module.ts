@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { ParkingController } from "./parking/parking.controller";
 import ParkingService from "./parking/parking.service";
+import { AuthenticationModule } from "../authentication/authentication.module";
 
 @Module({
   imports: [AuthenticationModule],
@@ -8,4 +9,4 @@ import ParkingService from "./parking/parking.service";
   providers: [ParkingService],
   exports: []
 })
-export class AuthenticationModule {}
+export class ParkModule {}
